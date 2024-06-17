@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 출석 체크 시스템</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QR 출석 체크 시스템</h1>
+        <div id="qr-code-section">
+            <h2>QR 코드 생성</h2>
+            <input type="text" id="event-id" placeholder="이벤트 ID 입력">
+            <button onclick="generateQRCode()">QR 코드 생성</button>
+            <div id="qr-code"></div>
+            <a id="download-link" style="display: none;">QR 코드 다운로드</a>
+        </div>
+        <div id="attendance-section">
+            <h2>출석 현황</h2>
+            <button onclick="fetchAttendance()">출석 데이터 가져오기</button>
+            <ul id="attendance-list"></ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
